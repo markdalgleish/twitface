@@ -1,42 +1,42 @@
 {
-  "name": "twitface",
-  "description": "Twitter avatar API client",
-  "version": "0.1.0",
-  "homepage": "https://github.com/markdalgleish/twitface",
-  "author": {
-    "name": "Mark Dalgleish",
-    "url": "http://markdalgleish.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/markdalgleish/twitface.git"
-  },
-  "bugs": {
-    "url": "https://github.com/markdalgleish/twitface/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://markdalgleish.mit-license.org"
-    }
-  ],
-  "main": "lib/twitface",
-  "engines": {
-    "node": "~0.8.2"
-  },
-  "scripts": {
-    "test": "grunt lint && grunt test"
-  },
-  "dependencies": {
-    "request": "~2.9.203",
-    "q": "~0.8.5"
-  },
-  "devDependencies": {
-    "grunt": "~0.3.9"
-  },
-  "keywords": [
-    "twitter",
-    "avatar",
-    "profile"
-  ]
+	"name": "twitface",
+	"description": "Twitter avatar API client",
+	"version": "0.1.0",
+	"homepage": "https://github.com/markdalgleish/twitface",
+	"author": {
+		"name": "Mark Dalgleish",
+		"url": "http://markdalgleish.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/markdalgleish/twitface.git"
+	},
+	"bugs": {
+		"url": "https://github.com/markdalgleish/twitface/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://markdalgleish.mit-license.org"
+		}
+	],
+	"main": "lib/twitface",
+	"engines": {
+		"node": "~0.8.2"
+	},
+	"scripts": {
+		"test": "grunt lint && grunt test"
+	},
+	"dependencies": {
+		"request": "~2.9.203",
+		"q": "~0.8.5"
+	},
+	"devDependencies": {
+		"grunt": "~0.3.9"
+	},
+	"keywords": [
+		"twitter",
+		"avatar",
+		"profile"
+	]
 }
