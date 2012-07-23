@@ -1,2 +1,5 @@
 /node_modules/
+.git*
 .DS_Store
+.travis.yml
+grunt.js
