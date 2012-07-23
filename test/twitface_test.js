@@ -68,5 +68,21 @@ exports['twitface'] = {
 		twitface.setExpiryDuration(ORIGINAL_DURATION);
 
 		test.done();
+	},
+	'username can be invalid': function(test) {
+		test.expect(1);
+
+		twitface.load('markdalgleish/foo', function(err, url) {
+			test.equal(err.message, 'Invalid username');
+			test.done();
+		});
+	},
+	'usernames can be invalid': function(test) {
+		test.expect(1);
+
+		twitface.load(['markdalgleish/foo', 'ryah/bar'], function(err, url) {
+			test.equal(err.message, 'Invalid usernames');
+			test.done();
+		});
 	}
 };
