@@ -3,20 +3,41 @@ var twitface = require('../lib/twitface.js');
 exports['twitface'] = {
 	'no size specified': function(test) {
 		test.expect(1);
+		
 		twitface.load('markdalgleish', function(err, url) {
 			test.equal(url.indexOf('twimg') > 0, true);
 			test.done();
 		});
 	},
+	'array of names, no size specified': function(test) {
+		test.expect(2);
+
+		twitface.load(['markdalgleish', 'ryah'], function(err, urls) {
+			test.equal(urls[0].indexOf('twimg') > 0, true);
+			test.equal(urls[1].indexOf('twimg') > 0, true);
+			test.done();
+		});
+	},
 	'size specified': function(test) {
 		test.expect(1);
+
 		twitface.load('markdalgleish', 'bigger', function(err, url) {
 			test.equal(url.indexOf('twimg') > 0, true);
 			test.done();
 		});
 	},
+	'array of names, size specified': function(test) {
+		test.expect(2);
+
+		twitface.load(['markdalgleish', 'ryah'], 'bigger', function(err, urls) {
+			test.equal(urls[0].indexOf('twimg') > 0, true);
+			test.equal(urls[1].indexOf('twimg') > 0, true);
+			test.done();
+		});
+	},
 	'invalid size specified': function(test) {
 		test.expect(1);
+
 		twitface.load('markdalgleish', 'invalid_size', function(err, url) {
 			test.equal(url.indexOf('twimg') > 0, true);
 			test.done();
