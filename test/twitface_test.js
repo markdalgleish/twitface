@@ -3,7 +3,7 @@ var twitface = require('../lib/twitface.js');
 exports['twitface'] = {
 	'no size specified': function(test) {
 		test.expect(1);
-		
+
 		twitface.load('markdalgleish', function(err, url) {
 			test.equal(url.indexOf('twimg') > 0, true);
 			test.done();
@@ -35,7 +35,7 @@ exports['twitface'] = {
 			test.done();
 		});
 	},
-	'invalid size specified': function(test) {
+	'invalid size is accepted': function(test) {
 		test.expect(1);
 
 		twitface.load('markdalgleish', 'invalid_size', function(err, url) {
