@@ -4,7 +4,7 @@ Twitter avatar API client for Node.js [![Build Status](https://secure.travis-ci.
 
 ## Setup
 
-Install the module with: `npm install https://github.com/markdalgleish/twitface/tarball/master`
+Install the module with: `npm install twitface`
 
 ## Basic Usage
 
