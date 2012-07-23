@@ -12,15 +12,33 @@ Install the module with: `npm install https://github.com/markdalgleish/twitface/
 var twitface = require('twitface');
 
 twitface.load('markdalgleish', function(err, url) {
-	console.log(url); // Avatar URL (normal size)
+	console.log(url); // Avatar URL ('normal' size)
+});
+```
+
+## Requesting multiple images
+
+```javascript
+twitface.load(['markdalgleish', 'ryah'], function(err, urls) {
+	console.log(urls); // Array of avatar URLs ('normal' size)
 });
 ```
 
 ## Request a specific size
 
+Requesting a single image:
+
 ```javascript
-twitface.load('username', 'size', function(err, url) {
-	console.log(url); // Avatar URL (normal size)
+twitface.load('markdalgleish', 'bigger', function(err, url) {
+	console.log(url); // Avatar URL
+});
+```
+
+Requesting multiple images:
+
+```javascript
+twitface.load(['markdalgleish', 'ryah'], 'bigger', function(err, urls) {
+	console.log(urls); // Array of avatar URLs
 });
 ```
 
@@ -39,7 +57,7 @@ By default, 'normal' avatar URLs are returned. This default can be changed with 
 ```javascript
 twitface.setDefaultSize('reasonably_small');
 
-twitface.load('username', function(err, url) {
+twitface.load('markdalgleish', function(err, url) {
 	console.log(url); // Avatar URL (128x128)
 });
 ```
