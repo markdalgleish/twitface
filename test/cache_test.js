@@ -1,7 +1,7 @@
 var cache = require('../lib/cache.js');
 
 exports['cache'] = {
-	'setting and getting a cache entry': function(test) {
+	'cache entries can be set and retrieved': function(test) {
 		test.expect(1);
 
 		var USERNAME = 'username',

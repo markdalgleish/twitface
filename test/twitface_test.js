@@ -1,15 +1,14 @@
 var twitface = require('../lib/twitface.js');
 
 exports['twitface'] = {
-	'no size specified': function(test) {
+	'a single url is returned when passed a single username': function(test) {
 		test.expect(1);
 
 		twitface.load('markdalgleish', function(err, url) {
 			test.equal(url.indexOf('twimg') > 0, true);
 			test.done();
 		});
-	},
-	'array of names, no size specified': function(test) {
+	},'an array of urls is returned when passed an array of names': function(test) {
 		test.expect(2);
 
 		twitface.load(['markdalgleish', 'ryah'], function(err, urls) {
@@ -18,7 +17,7 @@ exports['twitface'] = {
 			test.done();
 		});
 	},
-	'size specified': function(test) {
+	'a url is returned when a username and size is supplied': function(test) {
 		test.expect(1);
 
 		twitface.load('markdalgleish', 'bigger', function(err, url) {
@@ -26,7 +25,7 @@ exports['twitface'] = {
 			test.done();
 		});
 	},
-	'array of names, size specified': function(test) {
+	'an array of urls is returned when passed an array of names and a size': function(test) {
 		test.expect(2);
 
 		twitface.load(['markdalgleish', 'ryah'], 'bigger', function(err, urls) {
@@ -35,7 +34,7 @@ exports['twitface'] = {
 			test.done();
 		});
 	},
-	'invalid size is accepted': function(test) {
+	'a url is returned even if an invalid size is provided': function(test) {
 		test.expect(1);
 
 		twitface.load('markdalgleish', 'invalid_size', function(err, url) {
@@ -43,7 +42,7 @@ exports['twitface'] = {
 			test.done();
 		});
 	},
-	'cache works correctly': function(test) {
+	'values can be set and retrieved from the cache': function(test) {
 		test.expect(1);
 
 		twitface.load('markdalgleish', 'mini', function(err, url) {
@@ -56,7 +55,7 @@ exports['twitface'] = {
 
 		});
 	},
-	'set and get the cache expiry duration': function(test) {
+	'the cache expiry duration value can be set and retrieved': function(test) {
 		test.expect(1);
 
 		var ORIGINAL_DURATION = twitface.getExpiryDuration(),
@@ -69,7 +68,7 @@ exports['twitface'] = {
 
 		test.done();
 	},
-	'username can be invalid': function(test) {
+	'an error is thrown if an invalid username is provided': function(test) {
 		test.expect(1);
 
 		twitface.load('markdalgleish/foo', function(err, url) {
@@ -77,7 +76,7 @@ exports['twitface'] = {
 			test.done();
 		});
 	},
-	'usernames can be invalid': function(test) {
+	'an error is thrown if an array of invalid usernames is provided': function(test) {
 		test.expect(1);
 
 		twitface.load(['markdalgleish/foo', 'ryah/bar'], function(err, url) {
