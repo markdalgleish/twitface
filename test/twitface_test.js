@@ -8,12 +8,23 @@ exports['twitface'] = {
 			test.equal(url.indexOf('twimg') > 0, true);
 			test.done();
 		});
-	},'an array of urls is returned when passed an array of names': function(test) {
+	},
+	'an array of urls is returned when passed an array of usernames': function(test) {
 		test.expect(2);
 
 		twitface.load(['markdalgleish', 'ryah'], function(err, urls) {
 			test.equal(urls[0].indexOf('twimg') > 0, true);
 			test.equal(urls[1].indexOf('twimg') > 0, true);
+			test.done();
+		});
+	},
+	'an array with a single url is returned when passed an array containing a single username': function(test) {
+		test.expect(3);
+
+		twitface.load(['markdalgleish'], function(err, urls) {
+			test.equal(urls.length, 1);
+			test.equal(Array.isArray(urls), true);
+			test.equal(urls[0].indexOf('twimg') > 0, true);
 			test.done();
 		});
 	},
